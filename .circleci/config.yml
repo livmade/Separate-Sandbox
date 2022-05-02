@@ -28,7 +28,8 @@ workflows:
   do_this_thing:
     jobs:
       - numbah_one
+      # Should a 'when' clause go here?
       - numbah_two:
           requires: 
-            - numbah_one
+            - numbah_one #How to require and run ONLY if Job1 is true?
 
