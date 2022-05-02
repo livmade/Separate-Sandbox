@@ -32,4 +32,4 @@ workflows:
       - numbah_two:
           requires: 
             - numbah_one #How to require and run ONLY if Job1 is true?
-
+      # I don't think it will work the way I want it to
