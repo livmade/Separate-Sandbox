@@ -9,3 +9,4 @@ jobs:
     resource_class: livmade/this_is_a_test
     steps:
       - run: echo "Hi I'm on Runners!"
+      - run: echo "What's good?"
