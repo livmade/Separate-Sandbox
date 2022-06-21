@@ -1,35 +1,11 @@
-parameters:
-  this_is_true:
-    type: boolean
-    default: false
-
-jobs:
-  numbah_one:
-    docker:
-      - image: cimg/python:3.8-node
-    steps:
-      - run:
-          name: 'home directory'
-          command: |
-            cd ~
-            pwd
-      - this_is_true: true
-      - checkout
-
-  numbah_two:
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
+version: 2.1
 workflows:
-  version: 2
-  do_this_thing:
+  testing:
     jobs:
-      - numbah_one
-      # Should a 'when' clause go here?
-      - numbah_two:
-          requires: 
-            - numbah_one #How to require and run ONLY if Job1 is true?
-      # I don't think it will work the way I want it to
+      - runner-test
+jobs:
+  runner-test:
+    machine: true
+    resource_class: livmade/this_is_a_test
+    steps:
+      - run: echo "Hi I'm on Runners!"
