@@ -62,4 +62,4 @@ jobs:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job six!"
+      - run: echo "Hi I'm runner job six! We are finished."
