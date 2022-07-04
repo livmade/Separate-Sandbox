@@ -32,6 +32,7 @@ jobs:
       - run: whoami
       - run: uname
       - run: sh ./scale.sh
+      - run: chown -R $USER:$USER /var/opt/circleci/workdir
 
   runner1:
     machine: true
