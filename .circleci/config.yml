@@ -29,6 +29,7 @@ jobs:
     resource_class: livmade/boop
     steps:
       - checkout
+      - run: whoami
       - run: uname
       - run: sudo ./scale.sh
 
