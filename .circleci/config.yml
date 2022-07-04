@@ -38,8 +38,6 @@ jobs:
     resource_class: livmade/docker
     steps:
       - run: echo "Hi I'm runner job 1!"
-      - run: |
-            chown -R $USER: /var/opt/circleci/workdir
 
   runner2:
     machine: true
