@@ -31,7 +31,7 @@ jobs:
       - checkout
       - run: whoami
       - run: uname
-      - run: sudo ./scale.sh
+      - run: sh ./scale.sh
 
   runner1:
     machine: true
