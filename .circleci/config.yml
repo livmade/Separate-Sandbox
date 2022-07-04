@@ -1,23 +1,64 @@
 version: 2.1
+
 workflows:
-  nowIOnlyHaveThree:
+  testing:
     jobs:
-      - windowsTest
-      - dockerTest
-      - macOSTest
+      - runner1
+      - runner2
+      - runner3
+      - runner4
+      - runner5
+      - runner6
+  scaling:
+    jobs:
+      - scale
+  # linux:
+  #   jobs:
+  #     - linux-runner
+
 jobs:
-  windowsTest:
-    machine: true
-    resource_class: livmade/windows
-    steps:
-      - run: echo "Do you like chocolate?"
-  dockerTest:
-    machine: true
-    resource_class: livmade/docker
-    steps:
-      - run: echo "Yes, I do!"
-  macOSTest:
+  # linux-runner: 
+  #   machine: true
+  #   resource_class: jsjimenez51/ubuntu-resource-class
+  #   steps:
+  #     - run: echo "Hi I'm Running on an Ubuntu Server!"
+  #     - run: uname
+
+  scale:
     machine: true
     resource_class: livmade/boop
     steps:
-      - run: echo "No, I only like caramel."
+      - checkout
+      - run: uname
+      - run: ./scale.sh
+
+  runner1:
+    machine: true
+    resource_class: livmade/docker
+    steps:
+      - run: echo "Hi I'm runner job 1!"
+  runner2:
+    machine: true
+    resource_class: livmade/docker
+    steps:
+      - run: echo "Hi I'm runner job 2!"
+  runner3:
+    machine: true
+    resource_class: livmade/docker
+    steps:
+      - run: echo "Hi I'm runner job 3!"
+  runner4:
+    machine: true
+    resource_class: livmade/docker
+    steps:
+      - run: echo "Hi I'm runner job 4!!"
+  runner5:
+    machine: true
+    resource_class: livmade/docker
+    steps:
+      - run: echo "Hi I'm runner job 5!"
+  runner6:
+    machine: true
+    resource_class: livmade/docker
+    steps:
+      - run: echo "Hi I'm runner job 6!"
