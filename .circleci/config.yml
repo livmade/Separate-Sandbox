@@ -1,11 +1,17 @@
 version: 2.1
 workflows:
-  testforBoop:
+  testingAllDaRunners:
     jobs:
-      - runner-test
+      - boopTest
+      - testTest
 jobs:
-  runner-test:
+  boopTest:
     machine: true
     resource_class: livmade/boop
     steps:
-      - run: echo "Hi I'm on Runners!"
+      - run: echo "Do you like chocolate?"
+  testTest:
+    machine: true
+    resource_class: livmade/this_is_a_test
+    steps:
+      - run: echo "Yes, I do"
