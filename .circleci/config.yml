@@ -6,6 +6,6 @@ workflows:
 jobs:
   runner-test:
     machine: true
-    resource_class: livmade/boop
+    resource_class: livmade/windows
     steps:
       - run: echo "Hi I'm on Runners!"
