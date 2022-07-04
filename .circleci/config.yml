@@ -2,14 +2,8 @@ version: 2.1
 workflows:
   testingAllDaRunners:
     jobs:
-      - boopTest
       - windowsTest
 jobs:
-  boopTest:
-    machine: true
-    resource_class: livmade/boop
-    steps:
-      - run: echo "Do you like chocolate?"
   windowsTest:
     machine: true
     resource_class: livmade/windows
