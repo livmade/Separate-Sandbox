@@ -9,5 +9,3 @@ jobs:
     resource_class: livmade/boop
     steps:
       - run: echo "Hi I'm on Runners!"
-      - run: echo "What's good?"
-      - run: echo "I liek chocolate"
