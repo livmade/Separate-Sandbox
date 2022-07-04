@@ -3,15 +3,15 @@ workflows:
   testingAllDaRunners:
     jobs:
       - boopTest
-      - testTest
+      - windowsTest
 jobs:
   boopTest:
     machine: true
     resource_class: livmade/boop
     steps:
       - run: echo "Do you like chocolate?"
-  testTest:
+  windowsTest:
     machine: true
-    resource_class: livmade/this_is_a_test
+    resource_class: livmade/windows
     steps:
       - run: echo "Yes, I do"
