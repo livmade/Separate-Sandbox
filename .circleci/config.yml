@@ -1,7 +1,7 @@
 version: 2.1
 
 workflows:
-  testing:
+  runner-stuff:
     jobs:
       - runner1
       - runner2
@@ -12,18 +12,12 @@ workflows:
   scaling:
     jobs:
       - scale
-  # linux:
-  #   jobs:
-  #     - linux-runner
+  other-runners:
+    jobs:
+      - windows
+
 
 jobs:
-  # linux-runner: 
-  #   machine: true
-  #   resource_class: jsjimenez51/ubuntu-resource-class
-  #   steps:
-  #     - run: echo "Hi I'm Running on an Ubuntu Server!"
-  #     - run: uname
-
   scale:
     machine: true
     resource_class: livmade/boop
@@ -37,30 +31,35 @@ jobs:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job 1!"
+      - run: echo "Hi I'm runner job 1 on Docker!"
 
   runner2:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job dos!"
+      - run: echo "Hi I'm runner job dos on Docker!"
   runner3:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job trois!"
+      - run: echo "Hi I'm runner job trois on Docker!"
   runner4:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job shi!!"
+      - run: echo "Hi I'm runner job shi on Docker!!"
   runner5:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job cinque!"
+      - run: echo "Hi I'm runner job cinque on Docker!"
   runner6:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job six! We are finished."
+      - run: echo "Hi I'm runner job six on Docker! We are finished."
+  windows:
+    machine: true
+    resource_class: livmade/windows
+    steps:
+      - run: echo "And, lastly! I am Runner on an Azure-Hosted Windows Server VM! We all work!"
