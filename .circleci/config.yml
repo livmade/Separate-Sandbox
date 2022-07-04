@@ -32,14 +32,15 @@ jobs:
       - run: whoami
       - run: uname
       - run: sh ./scale.sh
-      - run: |
-            chown -R $USER: /var/opt/circleci/workdir
 
   runner1:
     machine: true
     resource_class: livmade/docker
     steps:
       - run: echo "Hi I'm runner job 1!"
+      - run: |
+            chown -R $USER: /var/opt/circleci/workdir
+
   runner2:
     machine: true
     resource_class: livmade/docker
