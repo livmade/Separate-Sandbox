@@ -42,24 +42,24 @@ jobs:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job 2!"
+      - run: echo "Hi I'm runner job dos!"
   runner3:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job 3!"
+      - run: echo "Hi I'm runner job trois!"
   runner4:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job 4!!"
+      - run: echo "Hi I'm runner job shi!!"
   runner5:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job 5!"
+      - run: echo "Hi I'm runner job cinque!"
   runner6:
     machine: true
     resource_class: livmade/docker
     steps:
-      - run: echo "Hi I'm runner job 6!"
+      - run: echo "Hi I'm runner job six!"
