@@ -1,11 +1,11 @@
 version: 2.1
 workflows:
-  testing:
+  testforBoop:
     jobs:
       - runner-test
 jobs:
   runner-test:
     machine: true
-    resource_class: livmade/windows
+    resource_class: livmade/boop
     steps:
       - run: echo "Hi I'm on Runners!"
