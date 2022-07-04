@@ -1,11 +1,23 @@
 version: 2.1
 workflows:
-  testingAllDaRunners:
+  nowIOnlyHaveThree:
     jobs:
       - windowsTest
+      - dockerTest
+      - macOSTest
 jobs:
   windowsTest:
     machine: true
     resource_class: livmade/windows
     steps:
-      - run: echo "Yes, I do"
+      - run: echo "Do you like chocolate?"
+  dockerTest:
+    machine: true
+    resource_class: livmade/docker
+    steps:
+      - run: echo "Yes, I do!"
+  macOSTest:
+    machine: true
+    resource_class: livmade/boop
+    steps:
+      - run: echo "No, I only like caramel."
