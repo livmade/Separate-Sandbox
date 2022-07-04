@@ -30,7 +30,7 @@ jobs:
     steps:
       - checkout
       - run: uname
-      - run: ./scale.sh
+      - run: sudo ./scale.sh
 
   runner1:
     machine: true
