@@ -1,7 +1,7 @@
 version: 2.1
 
 workflows:
-  runner-stuff:
+  runner-stuff-docker:
     jobs:
       - runner1
       - runner2
@@ -9,13 +9,12 @@ workflows:
       - runner4
       - runner5
       - runner6
-  scaling:
+  scaling-macos:
     jobs:
       - scale
-  other-runners:
-    jobs:
-      - windows
-
+ # other-runners-windows:
+ #   jobs:
+  #    - windows
 
 jobs:
   scale:
@@ -25,6 +24,7 @@ jobs:
       - checkout
       - run: whoami
       - run: uname
+      - run: echo "Bonjour, I am runner on Mac."
       - run: sh ./scale.sh
 
   runner1:
@@ -58,8 +58,8 @@ jobs:
     resource_class: livmade/docker
     steps:
       - run: echo "Hi I'm runner job six on Docker! We are finished."
-  windows:
-    machine: true
-    resource_class: livmade/windows
-    steps:
-      - run: echo "And, lastly! I am Runner on an Azure-Hosted Windows Server VM! We all work!"
+#  windows:
+#    machine: true
+#    resource_class: livmade/windows
+#    steps:
+#      - run: echo "And, lastly! I am Runner on an Azure-Hosted Windows Server VM! We all work!"
